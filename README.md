@@ -5,4 +5,6 @@
 •Mapping of language features to assembly/machine code
 •Parameter passing
 •Activation records
-•Can deal with moderately-sized programs•Familiar with data structure concepts and applications•Competence with recursion
+•Can deal with moderately-sized programs
+•Familiar with data structure concepts and applications
+•Competence with recursion
