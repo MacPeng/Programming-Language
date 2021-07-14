@@ -6,13 +6,6 @@ myremoveduplicates list
 	| otherwise						= (head list) : myremoveduplicates (tail list)   --check the head element and the rest of the elements in the list
 
 
-myremoveduplicates_pm :: Eq a => [a] -> [a]
-myremoveduplicates_pm []	 		= []
-myremoveduplicates_pm (x:xs) 		
-	= case (elem x xs) of
-		True -> myremoveduplicates_pm (xs)
-		False -> x:(myremoveduplicates_pm xs)
-
 
 
 
