@@ -17,13 +17,6 @@ myintersection list1 list2
 	| otherwise						= myintersection (tail list1) list2
 
 
-myintersection_pm :: Eq a => [a] -> [a] -> [a]
-myintersection_pm [] list2			= []
-myintersection_pm (x:xs) list2
-	= case (elem x list2) of 
-		True -> x:(myintersection_pm xs list2)
-		False -> myintersection_pm xs list2 
-
 
 
 
