@@ -82,15 +82,6 @@ myreverse_helper list1 list2
 
 
 
-
-
-
---problem 6
-
-
-
-
-
 --problem 7
 myordered :: Ord a => [a] -> Bool 
 myordered list 
@@ -100,10 +91,4 @@ myordered list
 	| otherwise						 	= myordered (tail list)
 
 
-myordered_pm :: Ord a => [a] -> Bool
-myordered_pm [] 		= True
-myordered_pm [_]		= True
-myordered_pm (x:xs)
-	= case ( x > (head xs)) of 
-		True -> False
-		False -> myordered_pm (xs)
+
