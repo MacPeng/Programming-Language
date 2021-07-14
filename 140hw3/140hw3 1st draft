@@ -62,13 +62,3 @@ myreverse_helper list1 list2
 
 
 
---problem 7
-myordered :: Ord a => [a] -> Bool 
-myordered list 
-	| null list 						= True
-	| null (tail list)					= True
-	| (head list) > (head (tail list))	= False 	
-	| otherwise						 	= myordered (tail list)
-
-
-
