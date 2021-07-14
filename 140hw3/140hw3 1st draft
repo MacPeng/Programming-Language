@@ -1,4 +1,4 @@
---Problem 1
+--Problem 1 
 myremoveduplicates :: Eq a => [a] -> [a]
 myremoveduplicates list
 	| null list 					= list    --empty list = list
