@@ -79,14 +79,8 @@ myreverse_helper list1 list2
 
 
 
-myreverse_pm :: [a] -> [a]
-myreverse_pm [] 	                    = []
-myreverse_pm list 	                    = myreverse_helper_pm list []
 
-myreverse_helper_pm :: [a] -> [a] -> [a]
-myreverse_helper_pm [] (y:ys) 			= (y:ys)
-myreverse_helper_pm (x:xs) []			= myreverse_helper_pm xs (x:[])
-myreverse_helper_pm (x:xs) (y:ys)		= myreverse_helper_pm xs (x:(y:ys))
+
 
 
 
