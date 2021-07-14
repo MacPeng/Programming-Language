@@ -40,12 +40,6 @@ mylast list
  	| null (tail list)	= list
  	| otherwise 		= mylast (tail list) --call the last element in the list in this case
 
-mylast_pm :: [a] -> [a]
-mylast_pm []			= []
-mylast_pm (x:xs)
-	= case (null xs) of 
-		True -> (x:xs)
-		False -> mylast_pm xs
 
 
 
