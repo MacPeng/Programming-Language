@@ -16,12 +16,7 @@ mynthtail_pm n (x:xs) 	            = mynthtail_pm (n-1) xs
 
 mynthtail_pm 0 list        = list
 --Problem 1 
-myremoveduplicates :: Eq a => [a] -> [a]
-myremoveduplicates list
-	| null list 					= list    --empty list = list
-	| elem (head list) (tail list)	= myremoveduplicates (tail list)   --check if head is the same as the tail
 
-mynthtail_pm 0 list        = list
 
 
 
