@@ -48,3 +48,46 @@ mynthtail_pm _n (_x:_xs)
 
 
 
+--problem 4
+mylast :: [a] -> [a]
+mylast list 
+ | null list= list
+ | null (tail list)= list
+ | otherwise= mylast (tail list) 
+
+mylast_pm :: [a] -> [a]
+mylast_pm []= []
+mylast_pm (x:xs)
+ = case (null xs) of 
+  True -> (x:xs)
+  False -> mylast_pm xs
+
+
+
+
+
+ 
+--problem 5
+myreverse :: [a] -> [a]
+myreverse list
+ | null list= list
+ | otherwise= myreverse_helper list []
+
+myreverse_helper :: [a] -> [a] -> [a]
+myreverse_helper list1 list2 
+ | null list1= list2
+ | otherwise= myreverse_helper (tail list1) ((head list1):list2)
+
+
+
+myreverse_pm :: [a] -> [a]
+myreverse_pm []= []
+myreverse_pm list= myreverse_helper_pm list []
+
+myreverse_helper_pm :: [a] -> [a] -> [a]
+myreverse_helper_pm [] list= list
+myreverse_helper_pm (x:xs) []= myreverse_helper_pm xs (x:[])
+myreverse_helper_pm (x:xs) list= myreverse_helper_pm xs (x:list)
+
+
+
