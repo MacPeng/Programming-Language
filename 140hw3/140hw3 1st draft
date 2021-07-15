@@ -1,15 +1,3 @@
---Problem 1 
-myremoveduplicates :: Eq a => [a] -> [a]
-myremoveduplicates list
-	| null list 					= list    --empty list = list
-	| elem (head list) (tail list)	= myremoveduplicates (tail list)   --check if head is the same as the tail
-	| otherwise						= (head list) : myremoveduplicates (tail list)   --check the head element and the rest of the elements in the list
-
-
-
-
-
-
 
 
 
