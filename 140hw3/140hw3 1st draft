@@ -9,12 +9,7 @@ myremoveduplicates list
 
 
 
---problem 2  list1 is the first input list  list2 is the 2nd input list
-myintersection :: Eq a => [a] -> [a] -> [a]
-myintersection list1 list2
-	| null list1 				    = [] 
-	| elem (head list1) list2	    = (head list1) : (myintersection (tail list1) list2)
-	| otherwise						= myintersection (tail list1) list2
+
 
 
 
@@ -31,6 +26,10 @@ mynthtail_pm 0 list 	            = list
 mynthtail_pm n (x:xs) 	            = mynthtail_pm (n-1) xs
 
 
+mynthtail_pm 0 list        = list
+
+
+mynthtail_pm 0 list        = list
 
 
 --problem 4
