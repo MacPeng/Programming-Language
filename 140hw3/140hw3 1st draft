@@ -34,6 +34,8 @@ myintersection_pm (x:xs) _list
 
 
 
+
+
 --problem 3
 mynthtail :: Int -> [a]-> [a]
 mynthtail n list 
@@ -88,6 +90,34 @@ myreverse_helper_pm :: [a] -> [a] -> [a]
 myreverse_helper_pm [] list= list
 myreverse_helper_pm (x:xs) []= myreverse_helper_pm xs (x:[])
 myreverse_helper_pm (x:xs) list= myreverse_helper_pm xs (x:list)
+
+
+
+--problem 6
+myreplaceall :: (Eq a) => a -> a -> [a] -> [a]
+myreplaceall replaced initial list
+ | null list= list
+ | (head list) == initial= replaced:(myreplaceall replaced initial (tail list))
+ | otherwise= (head list):(myreplaceall replaced initial (tail list))
+
+myreplaceall_pm :: (Eq a) => a -> a -> [a] -> [a]
+myreplaceall_pm _ _ []= []
+myreplaceall_pm i j (x:xs)
+ = case (x == j) of
+ True -> i:(myreplaceall_pm i j xs)
+ False -> x:(myreplaceall_pm i j xs)
+
+
+
+
+--problem 7
+myordered :: Ord a => [a] -> Bool 
+myordered list 
+ | null list= True
+ | null (tail list)= True
+ | (head list) > (head (tail list))= False
+ | otherwise= myordered (tail list)
+
 
 
 
