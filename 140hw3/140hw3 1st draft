@@ -1,15 +1,1 @@
 
---problem 3
-mynthtail :: Int -> [a]-> [a]
-mynthtail n list --n is the size of the list
-	| n == 0 			            = list
-	| otherwise 		            = mynthtail (n-1) (tail list)
-
-mynthtail_pm :: Int -> [a] -> [a]
-mynthtail_pm 0 list 	            = list
-mynthtail_pm n (x:xs) 	            = mynthtail_pm (n-1) xs
-
-
-mynthtail_pm 0 list        = list
---Problem 1 
-
