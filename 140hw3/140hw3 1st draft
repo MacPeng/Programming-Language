@@ -1,8 +1,4 @@
 
-
-
-
-
 --problem 3
 mynthtail :: Int -> [a]-> [a]
 mynthtail n list --n is the size of the list
@@ -17,13 +13,3 @@ mynthtail_pm n (x:xs) 	            = mynthtail_pm (n-1) xs
 mynthtail_pm 0 list        = list
 --Problem 1 
 
-
-
-
-
-
-
-
-
-
- 
