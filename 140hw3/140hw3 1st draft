@@ -24,12 +24,7 @@ myremoveduplicates list
 mynthtail_pm 0 list        = list
 
 
---problem 4
-mylast :: [a] -> [a]
-mylast list 
-	| null list 		= list
- 	| null (tail list)	= list
- 	| otherwise 		= mylast (tail list) --call the last element in the list in this case
+
 
 
 
@@ -50,6 +45,14 @@ myreverse_helper list1 list2
 
 
 
-
+--problem 4
+mylast :: [a] -> [a]
+mylast list 
+	| null list 		= list
+ 	| null (tail list)	= list
+ 	| otherwise 		= mylast (tail list) --call the last element in the list in this case
+	
+	goipsejgiopsopiggsgjhiosg
+	gsp[kgkpowk[
 
 
