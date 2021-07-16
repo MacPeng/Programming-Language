@@ -10,32 +10,6 @@
 myreverse :: [a] -> [a]
 myreverse list
  | null list= list
- | otherwise= myreverse_helper list []
-
-myreverse_helper :: [a] -> [a] -> [a]
-myreverse_helper list1 list2 
- | null list1= list2
- | otherwise= myreverse_helper (tail list1) ((head list1):list2)
-
-
-
-myreverse_pm :: [a] -> [a]
-myreverse_pm []= []
-myreverse_pm list= myreverse_helper_pm list []
-
-myreverse_helper_pm :: [a] -> [a] -> [a]
-myreverse_helper_pm [] list= list
-myreverse_helper_pm (x:xs) []= myreverse_helper_pm xs (x:[])
-myreverse_helper_pm (x:xs) list= myreverse_helper_pm xs (x:list)
-
-
-
---problem 6
-myreplaceall :: (Eq a) => a -> a -> [a] -> [a]
-myreplaceall replaced initial list
- | null list= list
- | (head list) == initial= replaced:(myreplaceall replaced initial (tail list))
- | otherwise= (head list):(myreplaceall replaced initial (tail list))
 
 myreplaceall_pm :: (Eq a) => a -> a -> [a] -> [a]
 myreplaceall_pm _ _ []= []
