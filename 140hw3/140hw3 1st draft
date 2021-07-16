@@ -1,9 +1,4 @@
---Problem 1
-myremoveduplicates :: (Eq a) => [a] -> [a]
-myremoveduplicates list
-  | null list = list    
-  | elem (head list) (tail list)= myremoveduplicates (tail list)   
-  | otherwise= (head list) : myremoveduplicates (tail list)   
+
 
 
 myremoveduplicates_pm :: (Eq a) => [a] -> [a]
