@@ -1,33 +1,4 @@
 
-  False -> mylast_pm xs
-
-
-
-
-
- 
---problem 5
-myreverse :: [a] -> [a]
-myreverse list
- | null list= list
-
-myreplaceall_pm :: (Eq a) => a -> a -> [a] -> [a]
-myreplaceall_pm _ _ []= []
-myreplaceall_pm i j (x:xs)
- = case (x == j) of
- True -> i:(myreplaceall_pm i j xs)
- False -> x:(myreplaceall_pm i j xs)
-
-
-
-
---problem 7
-myordered :: Ord a => [a] -> Bool 
-myordered list 
- | null list= True
- | null (tail list)= True
- | (head list) > (head (tail list))= False
- | otherwise= myordered (tail list)
 
 
 
@@ -48,7 +19,23 @@ myordered_pm (x:xs)
 
 
 
+eplaceall_pm :: (Eq a) => a -> a -> [a] -> [a]
+myreplaceall_pm _ _ []= []
+myreplaceall_pm i j (x:xs)
+ = case (x == j) of
+ True -> i:(myreplaceall_pm i j xs)
+ False -> x:(myreplaceall_pm i j xs)
 
+
+
+
+--problem 7
+myordered :: Ord a => [a] -> Bool 
+myordered list 
+ | null list= True
+ | null (tail list)= True
+ | (head list) > (head (tail list))= False
+ | otherwise= myordered (tail list)
 
 --problem 3
 mynthtail :: Int -> [a]-> [a]
