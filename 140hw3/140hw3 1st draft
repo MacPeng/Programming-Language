@@ -1,2 +1,126 @@
+--Problem 1
+myremoveduplicates :: (Eq a) => [a] -> [a]
+myremoveduplicates list
+  | null list = list    
+  | elem (head list) (tail list)= myremoveduplicates (tail list)   
+  | otherwise= (head list) : myremoveduplicates (tail list)   
+
+
+myremoveduplicates_pm :: (Eq a) => [a] -> [a]
+myremoveduplicates_pm [] = []
+myremoveduplicates_pm (x:xs)
+ | elem x xs = myremoveduplicates_pm xs
+ | otherwise = x : myremoveduplicates_pm xs
+
+
+
+
+--problem 2  list1 is the first input list  list2 is the 2nd input list
+myintersection :: (Eq a) => [a] -> [a] -> [a]
+myintersection list1 list2
+  | null list1                 = [] 
+  | elem (head list1) list2    = (head list1) : (myintersection (tail list1) list2)
+  | otherwise                  = myintersection (tail list1) list2
+
+
+myintersection_pm :: (Eq a) => [a] -> [a] -> [a]
+myintersection_pm _x [] = []
+myintersection_pm [] _y = []
+myintersection_pm (_x:_xs) _y 
+ |elem _x _y = _x:(myintersection_pm _xs _y) 
+ |otherwise = myintersection_pm _xs _y
+
+
+
+
+--problem 3
+mynthtail :: Int -> [a]-> [a]
+mynthtail n list 
+  | n == 0              = list
+  | otherwise           = mynthtail (n-1) (tail list)
+
+mynthtail_pm :: Int -> [a] -> [a]
+mynthtail_pm _ [] = []
+mynthtail_pm 0 (_x:_xs) = (_x:_xs)
+mynthtail_pm y (_x:_xs) = mynthtail_pm (y-1) _xs
+
+
+
+
+--problem 4
+mylast :: [a] -> [a]
+mylast list 
+ | null list= list
+ | null (tail list)= list
+ | otherwise= mylast (tail list) 
+
+
+
+mylast_pm :: [a] -> [a]
+mylast_pm [] = []
+mylast_pm (_x:[]) = [_x]
+mylast_pm (_x:y:[]) = [y]
+mylast_pm (_x:_xs) = mylast_pm _xs
+
+
+
+
+
+ 
+--problem 5
+myreverse :: [a] -> [a]
+myreverse list
+ | null list= list
+ | otherwise= myreverse_helper list []
+
+myreverse_helper :: [a] -> [a] -> [a]
+myreverse_helper list1 list2 
+ | null list1= list2
+ | otherwise= myreverse_helper (tail list1) ((head list1):list2)
+
+
+
+myreverse_pm :: [a] -> [a]
+myreverse_pm []= []
+myreverse_pm list= myreverse_helper_pm list []
+
+myreverse_helper_pm :: [a] -> [a] -> [a]
+myreverse_helper_pm [] list= list
+myreverse_helper_pm (x:xs) []= myreverse_helper_pm xs (x:[])
+myreverse_helper_pm (x:xs) list= myreverse_helper_pm xs (x:list)
+
+
+
+
+--problem 6
+myreplaceall :: (Eq a) => a -> a -> [a] -> [a]
+myreplaceall replaced initial list
+ | null list= list
+ | (head list) == initial= replaced:(myreplaceall replaced initial (tail list))
+ | otherwise= (head list):(myreplaceall replaced initial (tail list))
+
+myreplaceall_pm :: (Eq a) => a -> a -> [a] -> [a]
+myreplaceall_pm _ _ []      = []
+myreplaceall_pm c d (x:xs)
+ | d == x    = c : myreplaceall_pm c d xs
+ | otherwise = x : myreplaceall_pm c d xs
+
+
+
+
+--problem 7
+myordered :: Ord a => [a] -> Bool 
+myordered list 
+ | null list= True
+ | null (tail list)= True
+ | (head list) > (head (tail list))= False
+ | otherwise= myordered (tail list)
+
+
+myordered_pm :: Ord a => [a] -> Bool
+myordered_pm []         = True
+myordered_pm (_x:[])     = True
+myordered_pm (_x:y:[])   = _x <= y
+myordered_pm (_x:y:xs)   = (_x <= y) && (myordered_pm (y:xs))
 
 
