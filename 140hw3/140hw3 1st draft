@@ -1,24 +1,5 @@
 
 
-
-myremoveduplicates_pm :: (Eq a) => [a] -> [a]
-myremoveduplicates_pm [] = []
-myremoveduplicates_pm (x:xs)
-    = case (elem x xs) of
-    True -> myremoveduplicates_pm (xs)
-    False -> x:(myremoveduplicates_pm xs)
-
-
-
-
---problem 2  list1 is the first input list  list2 is the 2nd input list
-myintersection :: (Eq a) => [a] -> [a] -> [a]
-myintersection list1 list2
-  | null list1                 = [] 
-  | elem (head list1) list2    = (head list1) : (myintersection (tail list1) list2)
-  | otherwise                  = myintersection (tail list1) list2
-
-
 myintersection_pm :: (Eq a) => [a] -> [a] -> [a]
 myintersection_pm [] _list= []
 myintersection_pm (x:xs) _list
