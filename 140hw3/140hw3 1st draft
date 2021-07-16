@@ -2,32 +2,6 @@
 
 
 
-myordered_pm :: Ord a => [a] -> Bool
-myordered_pm []= True
-myordered_pm [_]= True
-myordered_pm (x:xs)
- = case ( x > (head xs)) of 
- True -> False
- False -> myordered_pm (xs)
- 
- 
- yintersection_pm (x:xs) _list
-   = case (elem x _list) of 
-   True -> x:(myintersection_pm xs _list)
-   False -> myintersection_pm xs _list 
-
-
-
-
-eplaceall_pm :: (Eq a) => a -> a -> [a] -> [a]
-myreplaceall_pm _ _ []= []
-myreplaceall_pm i j (x:xs)
- = case (x == j) of
- True -> i:(myreplaceall_pm i j xs)
- False -> x:(myreplaceall_pm i j xs)
-
-
-
 
 --problem 7
 myordered :: Ord a => [a] -> Bool 
@@ -37,16 +11,5 @@ myordered list
  | (head list) > (head (tail list))= False
  | otherwise= myordered (tail list)
 
---problem 3
-mynthtail :: Int -> [a]-> [a]
-mynthtail n list 
-  | n == 0              = list
-  | otherwise           = mynthtail (n-1) (tail list)
-
-mynthtail_pm :: Int -> [a] -> [a]
-mynthtail_pm _n []        = []
-mynthtail_pm _n (_x:_xs)
- | _n==0     =(_x:_xs)
- | otherwise =mynthtail_pm (_n-1) _xs
 
 
