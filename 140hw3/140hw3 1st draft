@@ -1,23 +1,4 @@
 
-
-myintersection_pm :: (Eq a) => [a] -> [a] -> [a]
-myintersection_pm [] _list= []
-m
-
-
-
---problem 4
-mylast :: [a] -> [a]
-mylast list 
- | null list= list
- | null (tail list)= list
- | otherwise= mylast (tail list) 
-
-mylast_pm :: [a] -> [a]
-mylast_pm []= []
-mylast_pm (x:xs)
- = case (null xs) of 
-  True -> (x:xs)
   False -> mylast_pm xs
 
 
