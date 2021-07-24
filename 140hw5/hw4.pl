@@ -4,9 +4,15 @@ shuffle([X|Xs], [Y|Ys], [X,Y|Z]) :- shuffle(Xs,Ys,Z).
 
 
 
-% question 2
-double([],[]).
-double([X|T],[X,X|HT]) :- double(T,HT).
+
+
+% question 4
+deletes(X,[X|Xs],Xs).
+deletes(X,[Y|Ys],[Y|Z]) :- deletes(X,Ys,Z).
+
+same_elements([],[]).
+same_elements([X|Xs],Ys) :- same_elements(Xs,Zs), deletes(X,Ys,Zs).
+
 
 
 
