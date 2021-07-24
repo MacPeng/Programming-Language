@@ -4,8 +4,7 @@
 deletes(X,[X|Xs],Xs).
 deletes(X,[Y|Ys],[Y|Z]) :- deletes(X,Ys,Z).
 
-same_elements([],[]).
-same_elements([X|Xs],Ys) :- same_elements(Xs,Zs), deletes(X,Ys,Zs).
+same_elements([],[])
 
 
 
