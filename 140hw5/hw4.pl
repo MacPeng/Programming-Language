@@ -1,13 +1,3 @@
-
-
-% question 4
-deletes(X,[X|Xs],Xs).
-deletes(X,[Y|Ys],[Y|Z]) :- deletes(X,Ys,Z).
-
-same_elements([],[])
-
-
-
 % question 1
 shuffle([], [], []).
 shuffle([X|Xs], [Y|Ys], [X,Y|Z]) :- shuffle(Xs,Ys,Z).
