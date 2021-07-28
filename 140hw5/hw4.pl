@@ -1,9 +1,4 @@
 
-shuffle([X|Xs], [Y|Ys], [X,Y|Z]) :- shuffle(Xs,Ys,Z).
-
-the contents in this file will be deleted later, so does the file itself.
-
-
 
 no_duplicates([Y|[]],[Y|[]]).
 no_duplicates([A|B],C) :- members(A,B), no_duplicates(B,C).
