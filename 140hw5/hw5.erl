@@ -46,3 +46,27 @@ end.
 
 
 
+
+%Q3
+mylast([]) -> [] ;
+mylast([H|[]]) -> [H] ;
+mylast([_|T]) -> mylast(T).
+
+
+
+
+
+%Q4
+myreverse(X) -> myreverse_helper(X, []).
+
+myreverse_helper([], X) -> X;
+myreverse_helper([H|T], X) -> myreverse_helper(T, [H|X]).
+
+
+
+
+
+
+
+
+
