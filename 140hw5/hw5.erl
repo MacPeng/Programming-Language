@@ -65,6 +65,17 @@ myreverse_helper([H|T], X) -> myreverse_helper(T, [H|X]).
 
 
 
+%Q5
+myreplaceall(X, Y, Z) -> myreplaceall_helper(X, Y, Z, []).
+
+
+myreplaceall_helper(_,_,[],Z) -> myreverse(Z);
+myreplaceall_helper(X, Y, [Y|T], Z) -> myreplaceall_helper(X, Y, T, [X|Z]);
+myreplaceall_helper(X, Y, [H|T], Z)  -> myreplaceall_helper(X, Y, T, [H|Z]).
+
+
+
+
 
 
 
